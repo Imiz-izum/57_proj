@@ -2,7 +2,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 import math
 import serial
-import time
 
 port = serial.Serial('COM5', 9600, timeout=1)
 
@@ -15,9 +14,10 @@ port = serial.Serial('COM5', 9600, timeout=1)
 k = 0.3
 g = 9.8
 m = float(input())
-f_time = float(input())
+f_time = float(input()) # время на которое мы моделируем 
 
 while True:
+
     isfloat = False
     while isfloat != True:
             try:
@@ -35,12 +35,12 @@ while True:
         (k * f_x / m)**2 +
         (g * (f_time - m / k * (1 - math.exp(-k * f_time / m))))**2
         )
-    ) # в радианах
+    ) # подсчет угла в радианах
 
     v_start = math.sqrt(
     (k * f_x / (m * (1 - math.exp(-k * f_time / m))))**2 +
     (g * (f_time / (1 - math.exp(-k * f_time / m)) - m / k))**2
-    )
+    ) # подсчет модуля начальной скорости
 
 
 
