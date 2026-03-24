@@ -10,9 +10,8 @@ port = serial.Serial('COM5', 9600, timeout=1)
 
 
 
-
-k = 0.3
 g = 9.8
+k = float(input())
 m = float(input())
 f_time = float(input()) # время на которое мы моделируем 
 
