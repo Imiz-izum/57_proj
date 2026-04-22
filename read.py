@@ -21,7 +21,7 @@ fig, ax = plt.subplots()
 while True:
     try:
         data = float(port.readline().decode('utf-8').strip())
-        print(data)  # :point_left: проверь, что значения реально меняются
+        print(data)
     except:
         continue
 
@@ -48,7 +48,7 @@ while True:
     ax.clear()
     ax.plot(xt, yt)
 
-    fig.canvas.draw()       # :point_left: принудительная перерисовка
+    fig.canvas.draw()
     fig.canvas.flush_events()
 
     plt.pause(0.01)
